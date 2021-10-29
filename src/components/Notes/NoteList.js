@@ -29,14 +29,20 @@ export default function NoteList() {
 }
 
 const NoteListWrapper = styled.div`
+	width: 100%;
 	max-width: 1300px;
 	margin: 0 auto;
-	padding: 90px;
+	padding: 90px 30px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-	gap: 60px;
+	gap: 50px;
 	grid-auto-flow: row;
 	grid-auto-rows: minmax(200px, 200px);
+	justify-content: center;
+
+	@media (min-width: 1300px) {
+		justify-content: start;
+	}
 `;
 
 const NoteItem = function({onAddNew = null, onClick = null, note = null}) {

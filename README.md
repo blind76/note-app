@@ -14,7 +14,7 @@ Open [https://blind76.github.io/note-app/](https://blind76.github.io/note-app/) 
 ### Run locally
 
 1. `yarn install`
-2. `yarn start`
+2. `yarn dev`
 3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 It requires Node 10.16.0 or later and yarn (or npm)

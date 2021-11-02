@@ -2,7 +2,7 @@
   "name": "notes-app",
   "version": "1.0.0",
   "author": "Vanja Somodi",
-  "description": "Test task for FIVE",
+  "description": "Example of note-taking web application using React.",
   "main": "index.js",
   "license": "ISC",
   "homepage": "http://blind76.github.io/note-app",

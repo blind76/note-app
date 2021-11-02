@@ -139,20 +139,27 @@ to {
 	border: none;
 	min-height: 290px;
 	outline: 0;
-`,Bl=Rl;function Ul(){return Ul=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},Ul.apply(this,arguments)}function $l(){const{add:e,selectedNote:t,setSelectedNote:n,notes:o}=Ml(),i=(0,r.useCallback)((()=>{e("## This is a note \n ### Subtitle \n Shopping list: \n - apples \n - oranges \n - toilet paper")}),[e]);return r.createElement(r.Fragment,null,t&&r.createElement(Bl,{onClose:()=>n(null)}),r.createElement(Hl,null,r.createElement(Vl,{key:"add",onAddNew:i,"data-testid":"add-new-note"}),o.map((e=>r.createElement(Vl,{key:e.id,onClick:()=>n(e),note:e})))))}const Hl=qe.div`
-	width: 100%;
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 90px 30px;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-	gap: 50px;
-	grid-auto-flow: row;
-	grid-auto-rows: minmax(200px, 200px);
-	justify-content: center;
+`,Bl=Rl;function Ul(){return Ul=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},Ul.apply(this,arguments)}function $l(){const{add:e,selectedNote:t,setSelectedNote:n,notes:o}=Ml(),i=(0,r.useCallback)((()=>{e("## This is a note \n ### Subtitle \n Shopping list: \n - apples \n - oranges \n - toilet paper")}),[e]);return r.createElement(r.Fragment,null,t&&r.createElement(Bl,{onClose:()=>n(null)}),r.createElement(Hl,null,r.createElement("div",{className:"grid"},r.createElement(Vl,{key:"add",onAddNew:i,"data-testid":"add-new-note"}),o.map((e=>r.createElement(Vl,{key:e.id,onClick:()=>n(e),note:e}))))))}const Hl=qe.div`
+	padding: 30px 10px;
 
 	@media (min-width: 1300px) {
-		justify-content: start;
+		padding: 90px 30px;
+	}
+
+	.grid {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+		gap: 50px;
+		grid-auto-flow: row;
+		grid-auto-rows: minmax(200px, 200px);
+		justify-content: center;
+
+		@media (min-width: 1300px) {
+			justify-content: start;
+		}
 	}
 `,Vl=function({onAddNew:e=null,onClick:t=null,note:n=null,...o}){const i=(0,r.useCallback)((()=>t&&u(t)&&n?t(n.id):e&&u(e)?e():void 0),[n,e,t]);return r.createElement(Wl,Ul({$isAddNew:e&&u(e),onClick:i},o),!e&&n?r.createElement(Mo,{"data-testid":"note-item-content"},n.source):"")};Vl.propTypes={onAddNew:l().func,onClick:l().func,note:l().shape({id:l().number,source:l().string})};const Wl=qe.div`
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.15);

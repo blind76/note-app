@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import styled, {css} from 'styled-components';
 
-import {getPixelsOrString, isFunction} from '../../misc/helpers';
+import {getPixelsOrString, isFunction} from '../../util/helpers';
 
 export const SIZE = {
 	SM: 'sm',

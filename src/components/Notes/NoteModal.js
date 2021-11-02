@@ -33,24 +33,28 @@ const NoteModal = function({onClose}) {
 	}, [save, note.id, sourceValue, toggleEditMode]);
 
 	return (
-		<Modal>
+		<Modal data-testid="note-modal">
 			{note && (
 				<NoteModalWrapper>
 					<div className="note-modal-header">
 						<div>
-							<Button leftIcon={faArrowLeft} color="transparent" onClick={onClose} />
+							<Button leftIcon={faArrowLeft} color="transparent" onClick={onClose} data-testid="back-button" />
 						</div>
 						<div>
 							{editMode ? (
-								<Button leftIcon={faSave} color="transparent" onClick={handleSave} />
+								<Button leftIcon={faSave} color="transparent" onClick={handleSave} data-testid="save-button" />
 							) : (
-								<Button leftIcon={faPen} color="transparent" onClick={toggleEditMode} />
+								<Button leftIcon={faPen} color="transparent" onClick={toggleEditMode} data-testid="edit-button" />
 							)}
 							<Button leftIcon={faTrash} color="transparent" onClick={handleDelete} />
 						</div>
 					</div>
 					<div className="note-modal-content">
-						{editMode ? <StyledTextarea value={sourceValue} onChange={handleChange} /> : <ReactMarkdown children={note.source} />}
+						{editMode ? (
+							<StyledTextarea value={sourceValue} onChange={handleChange} data-testid="source-textarea" />
+						) : (
+							<ReactMarkdown children={note.source} />
+						)}
 					</div>
 				</NoteModalWrapper>
 			)}

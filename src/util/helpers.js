@@ -28,12 +28,15 @@ export const findNextId = function (array) {
   const sortedArray = array.slice().sort(function (a, b) {
     return a.id - b.id;
   });
+  
   let previousId = 0;
+
   for (const element of sortedArray) {
     // eslint-disable-next-line eqeqeq
     if (element.id != previousId + 1) {
       return previousId + 1;
     }
+    
     previousId = element.id;
   }
 

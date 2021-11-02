@@ -21,11 +21,9 @@ It requires Node 10.16.0 or later and yarn (or npm)
 
 ### Tests
 
-`src/components/Dashboard.test.js` and `src/util/helpers.test.js`
+These are just examples of unit and e2e tests.
 
-These are examples of tests.
-
-Run test locally with `yarn test`
+Run tests locally with `yarn test` or if you just want to run e2e tests `yarn test:e2e`
 
 ---
 

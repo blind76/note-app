@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import NotesContext from '../../context/NotesContext';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import {findNextId} from '../../misc/helpers';
+import {findNextId} from '../../util/helpers';
 
 export const NOTES_STORAGE_KEY = 'notes';
 

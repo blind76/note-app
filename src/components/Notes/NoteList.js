@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
-import {isFunction} from '../../misc/helpers';
+import {isFunction} from '../../util/helpers';
 import NoteModal from './NoteModal';
 import useNotes from '../../hooks/useNotes';
 
@@ -19,7 +19,7 @@ export default function NoteList() {
 			{selectedNote && <NoteModal onClose={() => setSelectedNote(null)} />}
 
 			<NoteListWrapper>
-				<NoteItem key="add" onAddNew={handleAddNew} />
+				<NoteItem key="add" onAddNew={handleAddNew} data-testid="add-new-note" />
 				{notes.map((note) => (
 					<NoteItem key={note.id} onClick={() => setSelectedNote(note)} note={note} />
 				))}
@@ -45,7 +45,7 @@ const NoteListWrapper = styled.div`
 	}
 `;
 
-const NoteItem = function({onAddNew = null, onClick = null, note = null}) {
+const NoteItem = function({onAddNew = null, onClick = null, note = null, ...otherProps}) {
 	const handleClick = useCallback(() => {
 		if (onClick && isFunction(onClick) && note) {
 			return onClick(note.id);
@@ -56,8 +56,8 @@ const NoteItem = function({onAddNew = null, onClick = null, note = null}) {
 	}, [note, onAddNew, onClick]);
 
 	return (
-		<NoteItemWrapper $isAddNew={onAddNew && isFunction(onAddNew)} onClick={handleClick}>
-			{!onAddNew && note ? <ReactMarkdown>{note.source}</ReactMarkdown> : ''}
+		<NoteItemWrapper $isAddNew={onAddNew && isFunction(onAddNew)} onClick={handleClick} {...otherProps}>
+			{!onAddNew && note ? <ReactMarkdown data-testid="note-item-content">{note.source}</ReactMarkdown> : ''}
 		</NoteItemWrapper>
 	);
 };

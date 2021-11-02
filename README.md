@@ -1,7 +1,7 @@
 # Notes app
 
 Simple note-taking web app using React.
-List of notes with create note functionality and note details with edit and delete functionality.
+List of notes with create note functionality and note details with edit and delete functionalities.
 
 ---
 

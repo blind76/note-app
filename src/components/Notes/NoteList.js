@@ -19,29 +19,38 @@ export default function NoteList() {
 			{selectedNote && <NoteModal onClose={() => setSelectedNote(null)} />}
 
 			<NoteListWrapper>
-				<NoteItem key="add" onAddNew={handleAddNew} data-testid="add-new-note" />
-				{notes.map((note) => (
-					<NoteItem key={note.id} onClick={() => setSelectedNote(note)} note={note} />
-				))}
+				<div className="grid">
+					<NoteItem key="add" onAddNew={handleAddNew} data-testid="add-new-note" />
+					{notes.map((note) => (
+						<NoteItem key={note.id} onClick={() => setSelectedNote(note)} note={note} />
+					))}
+				</div>
 			</NoteListWrapper>
 		</>
 	);
 }
 
 const NoteListWrapper = styled.div`
-	width: 100%;
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 90px 30px;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-	gap: 50px;
-	grid-auto-flow: row;
-	grid-auto-rows: minmax(200px, 200px);
-	justify-content: center;
+	padding: 30px 10px;
 
 	@media (min-width: 1300px) {
-		justify-content: start;
+		padding: 90px 30px;
+	}
+
+	.grid {
+		width: 100%;
+		max-width: 1300px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+		gap: 50px;
+		grid-auto-flow: row;
+		grid-auto-rows: minmax(200px, 200px);
+		justify-content: center;
+
+		@media (min-width: 1300px) {
+			justify-content: start;
+		}
 	}
 `;
 

@@ -41,7 +41,9 @@ These two components are examples of very customizable reusable UI components wh
 Examples of custom and reusable hooks.
 
 `src/hooks/useBoolean.js` - easy way for working with booleans
+
 `src/hooks/useLocalStorage.js` - local storage communication via hook
+
 `src/hooks/useNotes.js` - for working with NotesContext
 
 ### Custom helpers
